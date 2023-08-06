@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,10 +9,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+        'home-bg': "url('/images/home-bg.png')",
+        'newsletter-bg': "url('/images/newsletter-bg.png')",
+        'events-bg': "url('/images/events-bg.png')",
+        'about-bg': "url('/images/about-bg.png')",
+      }
     },
   },
   plugins: [],

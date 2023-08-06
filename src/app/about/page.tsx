@@ -1,25 +1,12 @@
 export default function Page() {
-  return (
+    return (
     <>
-    <header className="h-fit min-h-full bg-home-bg bg-cover">
-      <div className="w-full h-full flex flex-col pl-24 pt-64 pb-36 bg-black/60">
-        <h1>The Council for <br></br> University Programs</h1>
-        <p className="mt-8 w-96">Northeastern University’s official, student-led programming board.</p>
-        <button className="mt-12">GET INVOLVED</button>
-      </div>
+    <header className="h-fit min-h-full bg-about-bg bg-cover">
+    <div className="w-full h-full flex flex-col pl-24 pt-64 pb-16 bg-black/60">
+        <h1>What is CUP?</h1>
+    </div>
     </header>
 
-    <section id="events" className="w-full h-full flex flex-col pl-24 pr-24 pt-12 pb-12">
-      <h2 className="m-auto">Upcoming Events</h2>
-      <div className="w-full flex pt-24 pb-24">
-        {/* Insert Dynamic Pull from Google Sheet for Event Data*/}
-      </div>
-      <button className="m-auto">VIEW PAST EVENTS</button>
-    </section>
-
-    <section id="eventphotos" className="bg-black h-24">
-    
-    </section>
 
     <section id="getinvolved" className="w-full h-full flex flex-col pl-24 pr-24 pt-12 pb-36">
       <h2 className="m-auto">Get Involved!</h2>
@@ -45,17 +32,6 @@ export default function Page() {
       <button className="m-auto">APPLY TO JOIN CUP</button>
     </section>
 
-    <section id="newsletter" className="h-fit text-white bg-newsletter-bg">
-      <div className="w-full h-full py-24 flex flex-col bg-black/60">
-        <h1 className="pl-24">Subscribe to our <br/> newsletter!</h1>
-        <p className="ml-24 w-1/3 mt-6">Stay up to date on all of our events— you’re not gonna want to miss out.</p>
-        <div className="flex ml-24 mt-12 space-x-5">
-          <input type="email" id="email" name="email" placeholder="Enter your email" className="text-black py-2 px-5 w-1/3 rounded"></input>
-          <button className="h-max w-fit">SUBSCRIBE</button>
-        </div>
-      </div>
-    </section>
-
     </>
-  )
+    )
 }

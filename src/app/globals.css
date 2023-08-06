@@ -2,26 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
+  background-color: #F3F3F3;
+}
+
+nav {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.95px;
+}
+
+header {
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.1875rem;
+}
+
+h2 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35.7px;
+}
+
+h3 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130.99%;
+}
+
+h4 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.95px;
+}
+
+p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+a {
+  cursor: pointer;
+}
+
+a.email {
+  color: #E2412E;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+button {
+  background-color: #E2412E;
+  color: #FFFFFF;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 2px;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.95px;
+}
+
+footer {
+  background-color: #1E1E1E;
+  color: white;
+}
+
+footer p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 163.99%;
+}
+
+#getinvolved p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
