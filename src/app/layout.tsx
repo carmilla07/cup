@@ -48,7 +48,7 @@ export default function RootLayout({
                 <h3>Resources</h3>
                 <p className='mt-12'><a>E-Board Office Hours</a></p>
                 <p className='mt-2'><a>Event Suggestion Form</a></p>
-                <p className='mt-2'><a>Subscript to Our Newsletter</a></p>
+                <p className='mt-2'><a>Subscribe to Our Newsletter</a></p>
               </div>
 
               <div className='basis-1/3'>
