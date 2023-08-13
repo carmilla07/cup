@@ -1,4 +1,18 @@
-export default function Page() {
+import Link from 'next/link'
+
+import { getEvents } from './sheet'
+
+import { Event } from './events/page'
+
+import { FaRegClock } from "react-icons/fa6"
+import { FaLocationDot } from "react-icons/fa6"
+
+export default async function Page() {
+
+  
+  var var_event: any = await getEvents()
+  var_event = var_event.slice(0,3)
+
   return (
     <>
     <header className="h-fit min-h-full bg-home-bg bg-cover">
@@ -12,9 +26,13 @@ export default function Page() {
     <section id="events" className="w-full h-full flex flex-col pl-24 pr-24 pt-12 pb-12">
       <h2 className="m-auto">Upcoming Events</h2>
       <div className="w-full flex pt-24 pb-24">
-        {/* Insert Dynamic Pull from Google Sheet for Event Data*/}
+        
+        {var_event.map((upcoming_event : any) => (
+          Event(upcoming_event)
+        ))}
+      
       </div>
-      <button className="m-auto">VIEW PAST EVENTS</button>
+      <Link href="/events" className='m-auto'><button>VIEW PAST EVENTS</button></Link>
     </section>
 
     <section id="eventphotos" className="bg-black h-24">
@@ -59,3 +77,5 @@ export default function Page() {
     </>
   )
 }
+
+

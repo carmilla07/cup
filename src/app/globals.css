@@ -48,6 +48,13 @@ h4 {
   line-height: 22.95px;
 }
 
+h5 {
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26.77px;
+}
+
 p {
   font-size: 16px;
   font-style: normal;
@@ -98,4 +105,14 @@ footer p {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.event_desc{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.event_ico {
+  color: #E2412E;
 }
