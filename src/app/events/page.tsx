@@ -5,12 +5,12 @@ import { getEvents } from "../sheet"
 
 export function Event(event: any) {
   return (
-    <div className='w-fit bg-white rounded mx-auto'>
+    <div className='w-[350px] bg-white rounded mx-auto'>
       <img className='rounded-t' src={ "events/" + event.image }></img>
       <div className='p-6'>
         <h5 className='mb-4'>{ event.title }</h5>
-        <div className="flex mb-2"><FaRegClock className="text-2xl event_ico mr-3 my-auto" /><p className='event_desc'> { event.time + " " + event.date } </p></div>
-        <div className="flex"><FaLocationDot className="text-2xl event_ico mr-3 my-auto" /><p className='event_desc'> { event.location } </p></div>
+        <div className="flex mb-2"><FaRegClock className="text-2xl highlight mr-3 my-auto" /><p className='event_desc'> { event.time + " " + event.date } </p></div>
+        <div className="flex"><FaLocationDot className="text-2xl highlight mr-3 my-auto" /><p className='event_desc'> { event.location } </p></div>
       </div>
     </div>
   )
@@ -18,7 +18,10 @@ export function Event(event: any) {
 
 export default async function Page() {
 
-  var var_event: any = await getEvents()
+  var all_events: any = await getEvents()
+  all_events = all_events.sort((a: any, b: any) => new Date(a.datesort).getTime() - new Date(b.datesort).getTime())
+  const upcoming_events = all_events.filter((event: any) => new Date(event.datesort) >= new Date() )
+  const past_events = all_events.filter((event: any) => new Date(event.datesort) < new Date() ).sort((a: any, b: any) => new Date(b.datesort).getTime() - new Date(a.datesort).getTime())
 
   return (
     <>
@@ -33,14 +36,21 @@ export default async function Page() {
       <h2 className="m-auto">Upcoming Events</h2>
       <div className="w-full flex flex-wrap pt-24 pb-24 gap-y-12">
         
-        {var_event.map((upcoming_event : any) => (
-          Event(upcoming_event)
+        {upcoming_events.map((event : any) => (
+          Event(event)
         ))}
-
-
 
       </div>
       <h2 className="m-auto">Past Events</h2>
+      <div className="w-full flex flex-wrap pt-24 pb-24 gap-y-12">
+        
+        {past_events.slice(0,6).map((event : any) => (
+          Event(event)
+        ))}
+
+        {/* Create functionality for view more past events */}
+
+      </div>
       <button className="m-auto">VIEW MORE</button>
     </section>
 

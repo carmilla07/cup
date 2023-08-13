@@ -4,13 +4,13 @@ import { getEvents } from './sheet'
 
 import { Event } from './events/page'
 
-import { FaRegClock } from "react-icons/fa6"
-import { FaLocationDot } from "react-icons/fa6"
 
 export default async function Page() {
 
   
   var var_event: any = await getEvents()
+  var_event = var_event.filter((event: any) => new Date(event.datesort) >= new Date() )
+  var_event = var_event.sort((a: any, b: any) => a.datesort.getTime() - b.datesort.getTime())
   var_event = var_event.slice(0,3)
 
   return (
@@ -36,7 +36,7 @@ export default async function Page() {
     </section>
 
     <section id="eventphotos" className="bg-black h-24">
-    
+
     </section>
 
     <section id="getinvolved" className="w-full h-full flex flex-col pl-24 pr-24 pt-12 pb-36">
