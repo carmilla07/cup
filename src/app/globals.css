@@ -116,3 +116,56 @@ footer p {
 .highlight {
   color: #E2412E;
 }
+
+
+
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+
+
+.embla__dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.embla__dot {
+  margin: auto 0.4em;
+  border-radius: 5em;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  background-color: transparent;
+  border-color: #E2412E;
+  border-width: 2px;
+}
+
+.embla__button {
+  margin: 0 2em;
+  border-radius: 5em;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.embla__button__svg {
+  height: 50%;
+  width: 50%;
+  margin: auto;
+}
+
+.embla__dot--selected {
+  background-color: #E2412E;
+}

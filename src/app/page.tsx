@@ -3,11 +3,10 @@ import Link from 'next/link'
 import { getEvents } from './sheet'
 
 import { Event } from './events/page'
-
+import { Slider } from './slider' 
 
 export default async function Page() {
 
-  
   var var_event: any = await getEvents()
   var_event = var_event.filter((event: any) => new Date(event.datesort) >= new Date() )
   var_event = var_event.sort((a: any, b: any) => a.datesort.getTime() - b.datesort.getTime())
@@ -35,8 +34,8 @@ export default async function Page() {
       <Link href="/events" className='m-auto'><button>VIEW PAST EVENTS</button></Link>
     </section>
 
-    <section id="eventphotos" className="bg-black h-24">
-
+    <section id="eventphotos" className="h-fit relative flex">
+          <Slider />
     </section>
 
     <section id="getinvolved" className="w-full h-full flex flex-col pl-24 pr-24 pt-12 pb-36">
